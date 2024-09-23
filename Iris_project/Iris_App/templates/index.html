@@ -1,0 +1,25 @@
+<html>
+
+<head>
+<title>IrisFlower</title>
+</head>
+<body>
+    <center>
+    <h1>IrisFlower Prediction</h1>
+   
+ 	  <form method="post"  >
+        {% csrf_token %}
+        <input type="text" class="input" name="SepalLengthCm"  placeholder="Sepal Length in cm"> <br><br>
+        <input type="text" class="input" name="SepalWidthCm"  placeholder="Sepal Width in cm"> <br><br>
+        <input type="text" class="input" name="PetalLengthCm"  placeholder="Petal Length in cm"> <br><br>
+        <input type="text" class="input" name="PetalWidthCm" placeholder="Petal Width in cm"> <br><br>
+        <input type=submit>
+       </form>
+   <br>
+   <br>
+       {% if result %}
+          <h1><b>Prediction:</b></h1><h1 color="red"><b>{{ result }}</b></h1>
+       {% endif %}
+    </center>
+</body>
+</html>
